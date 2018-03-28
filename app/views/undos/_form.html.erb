@@ -1,0 +1,17 @@
+<%= form_for(@undo) do |f| %>
+  <% if @undo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@undo.errors.count, "error") %> prohibited this undo from being saved:</h2>
+
+      <ul>
+      <% @undo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
